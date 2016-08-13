@@ -1,0 +1,29 @@
+# Make navigation easier
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../..'
+alias ~='cd ~'
+alias -- -='cd -'
+alias ll='ls -la'
+alias ldir='ls -l | grep "^d"'
+
+# Network related
+alias localip='ipconfig getifaddr en0'
+alias serve='open http://localhost:8080/ && python -m SimpleHTTPServer 8080'
+
+# Misc.
+alias git=/usr/local/bin/git
+alias sortbysize='ls -s | sort -n'
+alias createnote=fn_createnote
+
+# Added by termtile (https://github.com/apaszke/termtile), with customized alias names
+alias wul='osascript ~/.dotfiles/.termtile/tile.scpt up left'
+alias wur='osascript ~/.dotfiles/.termtile/tile.scpt up right'
+alias wdl='osascript ~/.dotfiles/.termtile/tile.scpt down left'
+alias wdr='osascript ~/.dotfiles/.termtile/tile.scpt down right'
+alias wl='osascript ~/.dotfiles/.termtile/tile.scpt left'
+alias wr='osascript ~/.dotfiles/.termtile/tile.scpt right'
+alias wu='osascript ~/.dotfiles/.termtile/tile.scpt up'
+alias wd='osascript ~/.dotfiles/.termtile/tile.scpt down'
+alias wb='osascript ~/.dotfiles/.termtile/resize.scpt'
+alias wc='osascript ~/.dotfiles/.termtile/center.scpt'

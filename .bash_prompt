@@ -1,0 +1,10 @@
+# -----------------------------------------------------------------------------
+# PROMPT STRING
+# -----------------------------------------------------------------------------
+
+PS1="\n[\w]"                              # Insert empty line after last command
+PS1+="\e[0;32m\$(get_git_branch)\e[m"     # Show Git branch, if available
+PS1+="\e[0;33m\$(get_git_hash)\e[m"       # Show Git hash, if available
+PS1+="\e[0;31m\$(get_git_tag)\e[m "       # Show Git tag, if available
+PS1+="(\u \e[0;34m<\j>\e[    m \t)\n"     # Who, no. of proccess, current time
+PS1+="$ "                                 # Actual prompt

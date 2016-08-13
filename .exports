@@ -1,0 +1,10 @@
+# Make vim the default editor
+export EDITOR="vim"
+
+# Don't clear the screen after quitting a man page
+export MANPAGER="less -X"
+
+# Enable color scheme
+ export CLICOLOR=1
+ export LSCOLORS=GxFxCxDxBxegedabagaced
+

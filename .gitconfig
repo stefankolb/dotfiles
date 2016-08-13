@@ -1,0 +1,32 @@
+[core]
+	excludesfile = /Users/stefan/.dotfiles/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = osxkeychain
+[mergetool]
+	keepBackup = true
+[push]
+	default = simple
+[alias]
+	cb = checkout -b
+	cm = commit -m
+	co = checkout
+  df = "!git diff --color $@ | ~/.dotfiles/git/diff-so-fancy"
+	db = branch -d
+	drb = "!f(){ B=$1; R=${B/origin\\//}; git push origin :${R} && git remote prune origin; }; f"
+	mm = !sh ~/.dotfiles/git/git-multimerge.sh
+	ps = push
+	pu = pull
+	rb = branch -m
+	twc = "!f() { git commit -m \"[tolinoweb-#${1}] ${2}\";  }; f"
+[rerere]
+	enabled = true
+[branch]
+	autosetuprebase = always
+[help]
+	autocorrect = 20

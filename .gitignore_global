@@ -1,0 +1,7 @@
+# Folder view configuration files
+.DS_Store
+
+# External disk's files
+.Spotlight-V100
+.Trashes
+
