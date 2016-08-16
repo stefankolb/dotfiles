@@ -7,9 +7,17 @@ alias -- -='cd -'
 alias ll='ls -la'
 alias ldir='ls -l | grep "^d"'
 
+# Improvements to default commands
+alias mv='mv- v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+
 # Network related
 alias localip='ipconfig getifaddr en0'
 alias serve='open http://localhost:8080/ && python -m SimpleHTTPServer 8080'
+
+# Colorize output
+alias cat='pygmentize -O style=monokai -f console256 -g'
 
 # Misc.
 alias git=/usr/local/bin/git

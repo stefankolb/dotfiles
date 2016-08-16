@@ -5,6 +5,5 @@ export EDITOR="vim"
 export MANPAGER="less -X"
 
 # Enable color scheme
- export CLICOLOR=1
- export LSCOLORS=GxFxCxDxBxegedabagaced
-
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
