@@ -21,6 +21,11 @@ function get_git_tag {
 # MISC.
 # -----------------------------------------------------------------------------
 
+# Create a new directory and enter it
+function md() {
+  mkdir -p "$@" && cd "$@"
+}
+
 # Create new notes.md file in ~/Documents/notes
 function fn_createnote {
   if [ ! -d "${HOME}/Documents/notes" ]; then
