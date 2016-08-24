@@ -26,6 +26,11 @@ function md() {
   mkdir -p "$@" && cd "$@"
 }
 
+# Get version number of NPM package
+function npmpkgv() {
+  npm info $1 | grep version:
+}
+
 # Create new notes.md file in ~/Documents/notes
 function fn_createnote {
   if [ ! -d "${HOME}/Documents/notes" ]; then
