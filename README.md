@@ -23,6 +23,7 @@ strict for now, don't know if this is a good thing or not.
 # Credits
 
 * [Paul Irish's dotfiles](https://github.com/paulirish/dotfiles)
+* [Matthias' Bynens dotfiles](https://github.com/mathiasbynens/dotfiles)
 
 # ToDos
  * Create main Gruntfile
