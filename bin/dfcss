@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# Shell script to easily create a new shell script. The file will be created,
+# made executable, the selected Bash will be added to the first line of the
+# file and the file will be opened in vi(m) in edit mode.
+# 
+# Call: ./dfcss {filename} {shell-identifier}
+# Params: {filename} Name of the shell script
+#         {shell-identifier} Name of the language the shell script will use
+#                            Values: bash, node
+
+function error_exit {
+  echo "${1}" >&2;
+  exit 1;
+}
+
+function set_shell {
+  case ${1} in
+    [bash]* ) ARGS_SHELL=${SHELL_BASH};;
+    [node]* ) ARGS_SHELL=${SHELL_NODE};;
+  esac
+}
+
+# Check for command line arguments
+ARGS_FILENAME=${1:null}
+ARGS_SHELL=${2:null}
+
+# Config
+SHELL_BASH="#!/bin/bash"
+SHELL_NODE="#!/usr/bin/env node"
+
+# Setup
+set_shell ${ARGS_SHELL}
+
+# If no filename has been specified, ask for one
+if [ -z ${ARGS_FILENAME} ]; then
+  printf "\n##### Please specifiy the name of the new shell script #####\n";
+  while true; do
+    read -ep "? " answer_filename
+    if [ -f ${answer_filename} ]; then
+      echo "I'm sorry, but this file already exists! Please choose another name...";
+    else
+      break;
+    fi
+  done
+  
+  ARGS_FILENAME=${answer_filename}
+fi
+
+# If no shell has been specified, ask for one
+if [ -z ${ARGS_SHELL} ]; then
+  printf "\n##### Which environment is used for the new script? #####\n";
+  printf "(1) Bash\n"
+  printf "(2) Node\n"
+  while true; do
+    read -p "? " answer_shell
+    case $answer_shell in
+      [1]* ) ARGS_SHELL=${SHELL_BASH}; break;;
+      [2]* ) ARGS_SHELL=${SHELL_NODE}; break;;
+      * ) echo "Please choose a valid shell.";;
+    esac
+  done
+fi
+
+touch ${ARGS_FILENAME} || error_exit "Could not create ${ARGS_FILENAME}";
+chmod +x ${ARGS_FILENAME} || error_exit "Could not make executable (chmod)";
+echo ${ARGS_SHELL}$'\n\n' >> ${ARGS_FILENAME}
+vi ${ARGS_FILENAME} +$ -c 'startinsert'
