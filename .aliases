@@ -8,7 +8,7 @@ alias ll='ls -la'
 alias ldir='ls -l | grep "^d"'
 
 # Improvements to default commands
-alias mv='mv- v'
+alias mv='mv -v'
 alias rm='rm -i -v'
 alias cp='cp -v'
 
