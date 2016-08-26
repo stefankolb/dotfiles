@@ -137,7 +137,7 @@
       "eol-last": 2,
       "func-call-spacing": [ 2, "never" ],
       "func-names": [ 2, "always" ],
-      "func-style": [ 2, "declaration" ],
+      "func-style": 2,
       "id-blacklist": 0,
       "id-length": 0,
       "id-match": 0,
