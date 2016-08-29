@@ -26,6 +26,11 @@ function md() {
   mkdir -p "$@" && cd "$@"
 }
 
+# List directory contents after cd-ing into it                                                                                     
+function cdl() { 
+  builtin cd "$@"; ll;
+}
+
 # Get version number of NPM package
 function npmpkgv() {
   npm info $1 | grep version:
