@@ -10,6 +10,7 @@ set showcmd							" show last executed command in bottom bar
 set cursorline					" highlight current line
 set wildmenu						" show visual autocomplete for command menu
 set showmatch	 					" highlight matching paranthesis [{()}]
+set ruler               " show row/col position
 
 set incsearch						" search directly as characters are entered
 set hlsearch						" highlight search matchesa
