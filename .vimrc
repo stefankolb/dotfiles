@@ -20,3 +20,5 @@ set foldenable					" enable folding
 set foldlevelstart=10		" open first 10 fold levels by default
 set foldnestmax=10			" 10 nested fold max
 set foldmethod=indent		" use indentions as fold method
+
+au FileType gitcommit set tw=72 " Auto-wrap git commit messages at 72 chars
