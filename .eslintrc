@@ -1,6 +1,7 @@
 {
   "env": {
     "browser": true,
+    "node": true
   },
   
   "rules": {
@@ -70,7 +71,7 @@
       "no-labels": 2,
       "no-lone-blocks": 2,
       "no-loop-func": 2,
-      "no-magic-numbers": 2,
+      "no-magic-numbers": [ 2, { "ignoreArrayIndexes": true } ],
       "no-multi-spaces": 2,
       "no-multi-str": 2,
       "no-new-func": 2,
@@ -83,6 +84,7 @@
       "no-redeclare": 2,
       "no-restricted-properties": 0,
       "no-return-assign": 2,
+      "no-return-await": 2,
       "no-script-url": 2,
       "no-self-assign": 2,
       "no-self-compare": 2,
@@ -103,7 +105,7 @@
       "wrap-iife": [ 2, "inside" ],
       "yoda": 2,
       
-      "strict": 2,
+      "strict": [ 2, "function" ],
       
       "init-declarations": 0,
       "no-catch-shadow": 2,
@@ -132,7 +134,7 @@
       "array-bracket-spacing": [ 2, "always" ],
       "block-spacing": 2,
       "brace-style": 2,
-      "camelcase": 2,
+      "camelcase": 0,
       "comma-dangle": 2,
       "comma-spacing": 2,
       "comma-style": 2,
@@ -155,7 +157,7 @@
       "lines-around-comment": 0,
       "linex-around-directive": 0,
       "max-depth": 2,
-      "max-len": [ 2, { "tabWidth": 2 } ],
+      "max-len": [ 1, { "code": 100, "tabWidth": 2 } ],
       "max-lines": 0,
       "max-nested-callbacks": [ 2, 3 ],
       "max-params": [ 2, 4 ],
