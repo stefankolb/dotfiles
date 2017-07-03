@@ -36,6 +36,9 @@ shopt -s histappend;
 # Git
 [ -f ~/.dotfiles/autocomplete/autocomplete-git.bash ] && . ~/.dotfiles/autocomplete/autocomplete-git.bash
 
+# NVM
+[ -f ~/.dotfiles/autocomplete/autocomplete-nvm.bash ] && . ~/.dotfiles/autocomplete/autocomplete-nvm.bash
+
 # NPM
 [ -f ~/.dotfiles/autocomplete/autocomplete-npm.bash ] && . ~/.dotfiles/autocomplete/autocomplete-npm.bash
 
