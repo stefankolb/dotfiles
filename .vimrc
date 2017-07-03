@@ -22,3 +22,5 @@ set foldnestmax=10			" 10 nested fold max
 set foldmethod=indent		" use indentions as fold method
 
 au FileType gitcommit set tw=72 " Auto-wrap git commit messages at 72 chars
+
+set viminfo+=n~/.dotfiles/.viminfo  " Tell vim to store .viminfo here
