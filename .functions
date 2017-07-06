@@ -38,12 +38,20 @@ function npmpkgv() {
 
 # Create new notes.md file in ~/Documents/notes
 function fn_createnote {
+  if [ $# -eq 0 ]; then
+    echo "Please provide note name, e.g. createnote test"
+    return 1;
+  fi
+  
   if [ ! -d "${HOME}/Documents/notes" ]; then
     mkdir ~/Documents/notes
   fi
   cd ~/Documents/notes
+  
   if [ ! -f "${HOME}/Documents/notes/$1.md" ]; then
     touch ~/Documents/notes/$1.md
+    open -a 'Atom' $1.md                                                                                                           
+  else
+    echo "Note \"${1}\" already exists!"
   fi
-  open -a 'Atom' $1.md
 }
