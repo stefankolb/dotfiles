@@ -44,14 +44,13 @@ function fn_createnote {
   fi
   
   if [ ! -d "${HOME}/Documents/notes" ]; then
-    mkdir ~/Documents/notes
+    mkdir ${HOME}/Documents/notes
   fi
-  cd ~/Documents/notes
   
   if [ ! -f "${HOME}/Documents/notes/$1.md" ]; then
-    touch ~/Documents/notes/$1.md
-    open -a 'Atom' $1.md                                                                                                           
-  else
+    touch ${HOME}/Documents/notes/$1.md
+    open -a 'Atom' ${HOME}/Documents/notes/$1.md
+ else
     echo "Note \"${1}\" already exists!"
   fi
 }
