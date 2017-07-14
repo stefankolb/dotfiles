@@ -63,13 +63,13 @@ rules:
   quotes: 0
   shorthand-values: 0
   single-line-per-selector: 0
-  space-afer-bang: 0
+  space-after-bang: 0
   space-after-colon: 0
   space-after-comma: 0
   space-around-operator: 0
   space-before-bang: 0
   space-before-brace: 0
-  space-before-color: 0
+  space-before-colon: 0
   space-between-parens: 0
   trailing-semicolon: 0
   url-quotes: 0
