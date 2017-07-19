@@ -27,12 +27,12 @@ rules:
   max-file-line-count: 0
   max-line-length: 0
   mixin-name-format: 0
-  mixins-before-declaration: 0
+  mixins-before-declarations: 0
   nesting-depth: 0
   no-attribute-selectors: 0
   no-color-hex: 0
   no-color-keywords: 0
-  no-colo-literals: 0
+  no-color-literals: 0
   no-combinators: 0
   no-css-comments: 0
   no-debug: 0
@@ -56,7 +56,7 @@ rules:
   no-warn: 0
   one-declaration-per-line: 0
   placeholder-in-extend: 0
-  placeholder-format-name: 0
+  placeholder-name-format: 0
   property-sort-order: 0
   property-units: 0
   pseudo-element: 0
@@ -76,4 +76,4 @@ rules:
   variable-for-property: 0
   variable-name-format: 0
   zero-unit: 0
-  
+
