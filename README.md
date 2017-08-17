@@ -16,8 +16,8 @@ strict for now, don't know if this is a good thing or not.
 
 > **Note**: Rules for Node.js, CommonJS and ECMAScript 6 are disabled.
 
-* ESLint: v4.2.0 ([list of rules][3])
-* Last checked: 2017-07-11
+* ESLint: v4.4.1 ([list of rules][3])
+* Last checked: 2017-08-17
 
 
 # Credits
