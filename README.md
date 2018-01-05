@@ -1,6 +1,6 @@
 # Stefan's dotfiles
 
-These are *my* personal dotfiles. Use at your own risk! 
+These are *my* personal dotfiles. Use at your own risk!
 
 Just started working on this, so don't expect anything...
 
@@ -8,16 +8,13 @@ Just started working on this, so don't expect anything...
 
 ## `.eslintrc`
 
-I've been using [JSHint][1] for quite some time, but recently 
+I've been using [JSHint][1] for quite some time, but recently
 switched to [ESLint][2]. The ESLint runtime configuration in
-[`.eslintrc`][4] holds 
-all available rules for the version mentioned below. The ruleset is rather 
-strict for now, don't know if this is a good thing or not.
+[`.eslintrc-all`][4] holds
+all available rules for the version mentioned below. All checks are deactived by default and can be activated on a per project base. I use [`.eslintrc`][5] during development and [`.eslintrc-commit`][5] is used in Git pre-commit.
 
-> **Note**: Rules for Node.js, CommonJS and ECMAScript 6 are disabled.
-
-* ESLint: v4.4.1 ([list of rules][3])
-* Last checked: 2017-08-17
+* ESLint: v4.14.0 ([list of rules][3])
+* Last checked: 2018-01-05
 
 
 # Credits
@@ -25,9 +22,9 @@ strict for now, don't know if this is a good thing or not.
 I learned a lot from - and was inspired by - the dotfiles of other people, in
 particular (in alphabetical order):
 
-* [Matthias Bynens' dotfiles][6]
-* [Nick S. Plekhanov's dotfiles][7]
-* [Paul Irish's dotfiles][5]
+* [Matthias Bynens' dotfiles][8]
+* [Nick S. Plekhanov's dotfiles][9]
+* [Paul Irish's dotfiles][7]
 
 
 # ToDos
@@ -44,7 +41,9 @@ particular (in alphabetical order):
 [1]: http://jshint.com
 [2]: http://eslint.org
 [3]: http://eslint.org/docs/rules/
-[4]: https://github.com/stefankolb/dotfiles/blob/master/.eslintrc
-[5]: https://github.com/paulirish/dotfiles
-[6]: https://github.com/mathiasbynens/dotfiles
-[7]: https://github.com/nicksp/dotfiles
+[4]: https://github.com/stefankolb/dotfiles/blob/master/coding/.eslintrc-all
+[5]: https://github.com/stefankolb/dotfiles/blob/master/coding/.eslintrc
+[6]: https://github.com/stefankolb/dotfiles/blob/master/coding/.eslintrc-commit
+[7]: https://github.com/paulirish/dotfiles
+[8]: https://github.com/mathiasbynens/dotfiles
+[9]: https://github.com/nicksp/dotfiles
