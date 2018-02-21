@@ -1,9 +1,9 @@
 # Make navigation easier
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ....='cd ../..'
+alias ....='cd ../../..'
 alias ~='cd ~'
-alias -- -='cd -'
+alias -- -='cd ~-'
 alias ll='ls -la'
 alias ldir='ls -l | grep "^d"'
 

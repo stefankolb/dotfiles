@@ -8,8 +8,10 @@
 	mm = !sh ~/.dotfiles/git/git-multimerge.sh
 	ps = push
 	pu = pull
-	rb = branch -m
+	s = status
+  rb = branch -m
 	twc = "!f() { git commit -m \"[tolinoweb-#${1}] ${2}\";  }; f"
+  uu = "!f() { git checkout ${1} && git fetch upstream && git merge upstream/${1} && git push;  }; f"
 [branch]
   autosetuprebase = always
 [core]

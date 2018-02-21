@@ -1,12 +1,14 @@
+" automatically load all bundles/plugins
+execute pathogen#infect()
+
 syntax on								" enable syntax processing
-colorscheme molokai			" use molkai color scheme
+colorscheme monokai		  " use monokai color scheme
 
 set tabstop=2						" number of visual spaces per TAB character
 set softtabstop=2				" number of spaces per TAB when editing
 set expandtab						" use spaces instead of tabs
 
 set number							" show line number
-set showcmd							" show last executed command in bottom bar
 set cursorline					" highlight current line
 set wildmenu						" show visual autocomplete for command menu
 set showmatch	 					" highlight matching paranthesis [{()}]
@@ -24,3 +26,6 @@ set foldmethod=indent		" use indentions as fold method
 au FileType gitcommit set tw=72 " Auto-wrap git commit messages at 72 chars
 
 set viminfo+=n~/.dotfiles/.viminfo  " Tell vim to store .viminfo here
+
+" shortcuts / key mappings
+map <C-n> :NERDTreeToggle<CR>
