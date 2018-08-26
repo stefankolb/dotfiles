@@ -8,14 +8,16 @@
 	mm = !sh ~/.dotfiles/git/git-multimerge.sh
 	ps = push
 	pu = pull
-	s = status
   rb = branch -m
+	s = status
+  sq = "!f() { git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\" }; f"
 	twc = "!f() { git commit -m \"[tolinoweb-#${1}] ${2}\";  }; f"
   uu = "!f() { git checkout ${1} && git fetch upstream && git merge upstream/${1} && git push;  }; f"
 [branch]
   autosetuprebase = always
 [core]
 	excludesfile = /Users/stefan/.dotfiles/.gitignore_global
+  quotepath = false
 [credential]
   helper = osxkeychain
 [diff]
@@ -27,6 +29,9 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[pager]
+  diff = diff-so-fancy | less --tabs=1,5 -RFX
+  show = diff-so-fancy | less --tabs=1,5 -RFX
 [push]
 	default = simple
 [rerere]
