@@ -16,8 +16,10 @@ alias cp='cp -v'
 alias localip='ipconfig getifaddr en0'
 alias serve='open http://localhost:8080/ && python -m SimpleHTTPServer 8080'
 
-# Colorize output
+# Improved/Smarter tools
 alias cat='pygmentize -O style=monokai -f console256 -g'
+alias ping='prettyping --nolegend'
+alias top='htop'
 
 # Misc.
 alias git=/usr/local/bin/git
