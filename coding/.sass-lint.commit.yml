@@ -5,27 +5,27 @@ files:
 rules:
   attribute-quotes:
     - 1
-    - 
+    -
       include: true
   bem-depth: 0
   border-zero:
     - 1
-    - 
+    -
       convention: 'none'
   brace-style:
     - 1
-    - 
+    -
       style: '1tbs'
       allow-single-line: true
   class-name-format:
     - 2
-    - 
+    -
       allow-leading-underscore: false
   clean-import-paths: 2
   declarations-before-nesting: 2
   empty-args:
     - 1
-    - 
+    -
       include: true
   empty-line-between-blocks: 0
   extends-before-declarations: 2
@@ -42,7 +42,7 @@ rules:
   hex-notation: 1
   id-name-format:
     - 2
-    - 
+    -
       allow-leading-underscore: false
   indentation: 1
   leading-zero: 1
@@ -57,6 +57,7 @@ rules:
     - 1
     -
       max-depth: 5
+  no-at-rule-vendor-prefix: 0
   no-attribute-selectors: 0
   no-color-hex: 0
   no-color-keywords: 0
@@ -64,23 +65,27 @@ rules:
   no-combinators: 0
   no-css-comments: 0
   no-debug: 2
-  no-disallowes-properties: 0
+  no-disallowed-properties: 0
+  no-disallowed-property-values: 0
   no-duplicate-properties: 2
   no-empty-rulesets: 2
   no-extends: 0
   no-ids: 0
   no-important: 0
   no-invalid-hex: 2
+  no-media-feature-vendor-prefix: 0
   no-mergeable-selectors: 0
   no-misspelled-properties: 2
+  no-property-vendor-prefix: 0
   no-qualifying-elements: 0
+  no-selector-vendor-prefix: 0
   no-trailing-whitespace: 0
   no-trailing-zero: 2
   no-transition-all: 0
   no-universal-selectors: 0
   no-url-domains: 0
   no-url-protocols: 0
-  no-vendor-prefixes: 0
+  no-value-vendor-prefix: 0
   no-warn: 2
   one-declaration-per-line: 0
   placeholder-in-extend: 0
@@ -110,4 +115,3 @@ rules:
     -
       allow-leading-underscore: false
   zero-unit: 2
-  
