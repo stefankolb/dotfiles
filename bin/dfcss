@@ -33,7 +33,7 @@ SHELL_NODE="#!/usr/bin/env node"
 set_shell ${ARGS_SHELL}
 
 # If no filename has been specified, ask for one
-if [ -z ${ARGS_FILENAME} ]; then
+if [ -z "${ARGS_FILENAME}" ]; then
   printf "\n##### Please specifiy the name of the new shell script #####\n";
   while true; do
     read -ep "? " answer_filename
@@ -48,7 +48,7 @@ if [ -z ${ARGS_FILENAME} ]; then
 fi
 
 # If no shell has been specified, ask for one
-if [ -z ${ARGS_SHELL} ]; then
+if [ -z "${ARGS_SHELL}" ]; then
   printf "\n##### Which environment is used for the new script? #####\n";
   printf "(1) Bash\n"
   printf "(2) Node\n"

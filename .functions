@@ -1,62 +1,58 @@
-# -----------------------------------------------------------------------------
-# GIT
-# -----------------------------------------------------------------------------
+# Various function used throughout other dotfiles (but can alse be
+# executed on their own)
 
-# Retrieve the current Git branch
-function get_git_branch {
+
+# ------------------------------------------------------------------------------
+# GIT
+# ------------------------------------------------------------------------------
+
+# Get current Git branch
+function git_get_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
 }
 
-# Retrieve the current Git hash
-function get_git_hash {
+# Get the current Git hash
+function git_get_hash {
   git rev-parse --short HEAD 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
 }
 
-# Retrieve latest Git tag, if available
-function get_git_tag {
+# Get the latest Git tag in the curent branch
+function git_get_tag {
   git describe --tags --abbrev=0 --first-parent 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
 }
 
-# -----------------------------------------------------------------------------
-# MISC.
-# -----------------------------------------------------------------------------
 
-# Create a new directory and enter it
-function md() {
+# ------------------------------------------------------------------------------
+# NODE / NPM
+# ------------------------------------------------------------------------------
+
+# Get the latest version of an NPM package
+function npm_pv {
+  npm info $1 | awk '/latest/ {print $2}'
+}
+
+# Go to the homepage of an NPM package
+function npm_ph {
+  open -a "Safari" $(npm info $1 homepage)
+}
+
+# Go to the NPM site of an NPM package
+function npm_nh {
+  open -a "Safari" https://www.npmjs.com/package/$1
+}
+
+
+# ------------------------------------------------------------------------------
+# TERMINAL HELPER
+# ------------------------------------------------------------------------------
+
+# Create a new directory and change to it
+function md {
   mkdir -p "$@" && cd "$@"
 }
 
-# List directory contents after cd-ing into it                                                                                     
-function cdl() { 
+# List directory contents after cd-ing into it
+# Needs ll alias (see .aliases)
+function cdl {
   builtin cd "$@"; ll;
-}
-
-# Get version number of NPM package
-function npmpkgv() {
-  npm info $1 | grep version:
-}
-
-# Open homepage of NPM package
-function npmpkgs() {
-  URL=$(npm info $1 | grep --only-matching -E "homepage: '(.*)'" | cut -d "'" -f 2)
-  open -a "Safari" ${URL}
-}
-
-# Create new notes.md file in ~/Documents/notes
-function fn_createnote {
-  if [ $# -eq 0 ]; then
-    echo "Please provide note name, e.g. createnote test"
-    return 1;
-  fi
-  
-  if [ ! -d "${HOME}/Documents/notes" ]; then
-    mkdir ${HOME}/Documents/notes
-  fi
-  
-  if [ ! -f "${HOME}/Documents/notes/$1.md" ]; then
-    touch ${HOME}/Documents/notes/$1.md
-    open -a 'Typora' ${HOME}/Documents/notes/$1.md
-  else
-    echo "Note \"${1}\" already exists!"
-  fi
 }

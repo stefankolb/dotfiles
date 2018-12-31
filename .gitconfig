@@ -1,22 +1,20 @@
 [alias]
-	cb = checkout -b
-	cm = commit -m
-	co = checkout
+  cb = checkout -b
+  cm = commit -m
+  co = checkout
   df = "!git diff --color $@ | ~/.dotfiles/git/diff-so-fancy"
-	db = branch -d
-	drb = "!f(){ B=$1; R=${B/origin\\//}; git push origin :${R} && git remote prune origin; }; f"
-	mm = !sh ~/.dotfiles/git/git-multimerge.sh
-	ps = push
-	pu = pull
+  db = branch -d
+  drb = "!f() { : git branch ; B=$1; R=${B/origin\\//}; git push origin :${R} && git remote prune origin; }; f"
+  ps = push
+  pu = pull
   rb = branch -m
-	s = status
-  sq = "!f() { git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\" }; f"
-	twc = "!f() { git commit -m \"[tolinoweb-#${1}] ${2}\";  }; f"
-  uu = "!f() { git checkout ${1} && git fetch upstream && git merge upstream/${1} && git push;  }; f"
+  s = status
+  sq = "!f() { git reset --soft HEAD~${1}; git commit -n --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; }; f"
+  uu = "!f() { : git branch ; git checkout ${1} && git fetch upstream && git rebase upstream/${1} && git push; }; f"
 [branch]
   autosetuprebase = always
 [core]
-	excludesfile = /Users/stefan/.dotfiles/.gitignore_global
+  excludesfile = ~/.dotfiles/git/.gitignore_global
   quotepath = false
 [credential]
   helper = osxkeychain
@@ -26,13 +24,19 @@
   autocorrect = 20
 [mergetool]
   keepBackup = true
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [pager]
   diff = diff-so-fancy | less --tabs=1,5 -RFX
   show = diff-so-fancy | less --tabs=1,5 -RFX
 [push]
-	default = simple
+  default = simple
 [rerere]
-	enabled = true
+  enabled = true
+[user]
+  name = Stefan Kolb
+  email = dev@stefankolb.de
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+

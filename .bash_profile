@@ -1,16 +1,24 @@
-# Set .dotfiles directory
-DOTFILES="${HOME}/.dotfiles"
+# Set .dotfiles base directory
+DOTFILES_BASE="${HOME}/.dotfiles"
 
-# Load other .dotfiles
+# Load other parts
 for FILE in aliases exports functions bash_prompt; do
-  FILE="${DOTFILES}/.${FILE}"
+  FILE="${DOTFILES_BASE}/.${FILE}"
   [ -e "${FILE}" ] && source "${FILE}"
 done
 unset FILE
 
-# -----------------------------------------------------------------------------
-# HISTROY CONTROL
-# -----------------------------------------------------------------------------
+# Make Node usable by importing Node Version Manager (NVM)
+export NVM_DIR=${DOTFILES_BASE}/.nvm
+[ -s "${NVM_DIR}/nvm.sh" ] && . ${NVM_DIR}/nvm.sh
+
+# ------------------------------------------------------------------------------
+# BASH HISTORY CONTROL
+# ------------------------------------------------------------------------------
+
+# Where to store history and specify entry format
+HISTFILE="${DOTFILES_BASE}/.bash_history"
+HISTTIMEFORMAT="%y-%m-%d %T "
 
 # Don't duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
@@ -19,40 +27,33 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000000
 HISTFILESIZE=${HISTSIZE}
 
-# Specify history file and entry format
-HISTFILE="${DOTFILES}/.bash_history"
-HISTTIMEFORMAT="%y-%m-%d %T "
-
 # Append to the history file, don't overwrite it
 shopt -s histappend;
 
-# -----------------------------------------------------------------------------
-# AUTOCOMPLETION
-# -----------------------------------------------------------------------------
-
-# SSH
-[ -f ~/.dotfiles/autocomplete/autocomplete-ssh.bash ] && . ~/.dotfiles/autocomplete/autocomplete-ssh.bash
+# ------------------------------------------------------------------------------
+# AUTOCOMPLETE
+# ------------------------------------------------------------------------------
 
 # Git
-[ -f ~/.dotfiles/autocomplete/autocomplete-git.bash ] && . ~/.dotfiles/autocomplete/autocomplete-git.bash
-
-# NVM
-[ -f ~/.dotfiles/autocomplete/autocomplete-nvm.bash ] && . ~/.dotfiles/autocomplete/autocomplete-nvm.bash
+[ -f ${DOTFILES_BASE}/bash/autocomplete/autocomplete-git.bash ] &&
+  . ${DOTFILES_BASE}/bash/autocomplete/autocomplete-git.bash
 
 # NPM
-[ -f ~/.dotfiles/autocomplete/autocomplete-npm.bash ] && . ~/.dotfiles/autocomplete/autocomplete-npm.bash
+[ -f ${DOTFILES_BASE}/bash/autocomplete/autocomplete-npm.bash ] &&
+  . ${DOTFILES_BASE}/bash/autocomplete/autocomplete-npm.bash
 
-# Grunt
-[ -f ~/.dotfiles/autocomplete/autocomplete-grunt.bash ] && . ~/.dotfiles/autocomplete/autocomplete-grunt.bash
+# NVM
+[ -f ${DOTFILES_BASE}/bash/autocomplete/autocomplete-nvm.bash ] &&
+  . ${DOTFILES_BASE}/bash/autocomplete/autocomplete-nvm.bash
+
+# SSH
+[ -f ${DOTFILES_BASE}/bash/autocomplete/autocomplete-ssh.bash ] &&
+  . ${DOTFILES_BASE}/bash/autocomplete/autocomplete-ssh.bash
 
 
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # MISC.
-# -----------------------------------------------------------------------------
-
-# Node Version Manager (NVM)                                                                        
-export NVM_DIR=~/.dotfiles/.nvm
-[ -s "${NVM_DIR}/nvm.sh" ] && . ${NVM_DIR}/nvm.sh
+# ------------------------------------------------------------------------------
 
 #
 shopt -s nocaseglob;
@@ -68,4 +69,4 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # iTerm2 tools
-source ~/.dotfiles/bash/.iterm2_shell_integration.bash
+. ${DOTFILES_BASE}/bash/iterm2_shell_integration.bash

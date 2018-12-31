@@ -1,11 +1,6 @@
-# https://github.com/nicksp/dotfiles/blob/master/shell/bash_prompt
-# Terminal -> Profiles -> Pro -> Text -> Monaco 13pt with 1,1 vertical spacing
-
-if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
-  export TERM='gnome-256color';
-elif infocmp xterm-256color >/dev/null 2>&1; then
-  export TERM='xterm-256color';
-fi;
+# BASH prompt
+# 
+# iTerm2 -> Profiles -> Text -> Hack 12pt
 
 # Define colors
 COLOR_RESET="\e[0m";
@@ -20,13 +15,10 @@ COLOR_VIOLET="\e[1;35m";
 COLOR_WHITE="\e[1;37m";
 COLOR_YELLOW="\e[1;33m";
 
-# -----------------------------------------------------------------------------
-# PROMPT STRING
-# -----------------------------------------------------------------------------
-
+# Prompt
 PS1="\n[\w]"                                          # Insert empty line after last command
-PS1+="${COLOR_GREEN}\$(get_git_branch)${COLOR_RESET}" # Show Git branch, if available
-PS1+="${COLOR_YELLOW}\$(get_git_hash)${COLOR_RESET}"  # Show Git hash, if available
-PS1+="${COLOR_RED}\$(get_git_tag)${COLOR_RESET}"      # Show Git tag, if available
+PS1+="${COLOR_GREEN}\$(git_get_branch)${COLOR_RESET}" # Show Git branch, if available
+PS1+="${COLOR_YELLOW}\$(git_get_hash)${COLOR_RESET}"  # Show Git hash, if available
+PS1+="${COLOR_RED}\$(git_get_tag)${COLOR_RESET}"      # Show Git tag, if available
 PS1+=" (\u ${COLOR_BLUE}<\j>${COLOR_RESET} \t)\n"     # Who, no. of proccess, current time
-PS1+="→ "                                             # Actual prompt
+PS1+="→ "                                             # 

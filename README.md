@@ -28,12 +28,11 @@ particular (in alphabetical order):
 
 
 # ToDos
- * Create main Gruntfile
- * Create folder with grunt files/tasks
- * Add grunt task for copying .dotfiles to user directory
- * Add grunt task for symlinking all files
- * Add grunt task to add bin to $PATH
- * Write README.md
+
+* Write README.md
+  * Add credits
+* Write install script
+* Write update script  
  
 
 [//]: # "References"
