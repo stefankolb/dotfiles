@@ -1,4 +1,3 @@
 [submodule "git/git-hooks"]
 	path = git/git-hooks
 	url = git@github.com:stefankolb/git-hooks.git
-	branch = master
