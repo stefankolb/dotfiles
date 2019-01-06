@@ -6,19 +6,66 @@
 # GIT
 # ------------------------------------------------------------------------------
 
+function git_is_git_dir {
+  if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == "true" ]; then
+    true
+  else
+    false
+  fi
+}
+
 # Get current Git branch
 function git_get_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\ \[\1\]/'
+  if git_is_git_dir; then
+    git symbolic-ref --short HEAD 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
+  fi
+}
+
+# Check if the current branch has some sort of modification
+# Heavily inspired by https://github.com/riobard/bash-powerline/blob/master/bash-powerline.sh
+function git_get_branch_with_modifications {
+  # Make sure we are within a Git directory
+  if ! git_is_git_dir; then
+    return
+  fi
+
+  SYMBOL_GIT_PUSH='↑'
+  SYMBOL_GIT_PULL='↓'
+  SYMBOL_GIT_MODIFIED='*'
+
+  # Force Git output in English
+  local git_eng="env LANG=C git"
+  local marks
+  
+  # Parse each line of git status to check whether we have local changes,
+  # we have commits to push or if the remote branch has commits we could pull
+  while IFS= read -r line; do
+    if [[ $line =~ ^## ]]; then
+      [[ $line =~ ahead\ ([0-9]+) ]] && marks+=" ${SYMBOL_GIT_PUSH}${BASH_REMATCH[1]}"
+      [[ $line =~ behind\ ([0-9]+) ]] && marks+=" ${SYMBOL_GIT_PULL}${BASH_REMATCH[1]}"
+    else
+      marks=" ${SYMBOL_GIT_MODIFIED}${marks}"
+      break
+    fi
+  done < <($git_eng status --porcelain --branch 2>/dev/null)
+  
+    # Apply info to current branch name
+   local BRANCH=$(git_get_branch)
+   echo "${BRANCH//[\[\]\ ]/}$marks" | sed 's/\(.*\)/\ \[\1\]/'
 }
 
 # Get the current Git hash
 function git_get_hash {
-  git rev-parse --short HEAD 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
+  if git_is_git_dir; then
+    git rev-parse --short HEAD 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
+  fi
 }
 
 # Get the latest Git tag in the curent branch
 function git_get_tag {
-  git describe --tags --abbrev=0 --first-parent 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
+  if git_is_git_dir; then
+    git describe --tags --abbrev=0 --first-parent 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
+  fi
 }
 
 
