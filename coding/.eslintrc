@@ -39,7 +39,6 @@
     "no-unsafe-negation": 0,
     "require-atomic-update": 0,
     "use-isnan": 0,
-    "valid-jsdoc": 0,
     "valid-typeof": 0,
 
     "accessor-pairs": 0,
@@ -101,6 +100,7 @@
     "no-unused-expressions": 0,
     "no-unused-labels": 0,
     "no-useless-call": 0,
+    "no-useless-catch": 0,
     "no-useless-concat": 0,
     "no-useless-escape": 0,
     "no-useless-return": 0,
@@ -217,7 +217,6 @@
     "prefer-object-spread": 0,
     "quote-props": 0,
     "quotes": 0,
-    "require-jsdoc": 0,
     "semi": 0,
     "semi-spacing": 0,
     "semi-style": 0,
