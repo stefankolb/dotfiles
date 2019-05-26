@@ -1,6 +1,7 @@
 [alias]
   cb = checkout -b
   cm = commit -m
+  cms = "!f() { git commit --allow-empty -m \"[status] ${1}\"; }; f"
   co = checkout
   df = "!git diff --color $@ | ~/.dotfiles/git/diff-so-fancy"
   db = branch -d
@@ -39,4 +40,3 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
-
