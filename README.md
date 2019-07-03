@@ -13,8 +13,8 @@ switched to [ESLint][2]. The ESLint runtime configuration in
 [`.eslintrc-all`][4] holds
 all available rules for the version mentioned below. All checks are deactived by default and can be activated on a per project base. I use [`.eslintrc`][5] during development and [`.eslintrc-commit`][5] is used in Git pre-commit.
 
-* ESLint: v5.12.0 ([list of rules][3])
-* Last checked: 2019-01-08
+* ESLint: v6.0.1 ([list of rules][3])
+* Last checked: 2019-07-03
 
 
 # Credits
