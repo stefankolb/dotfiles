@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/stefan/.config/configstore'
-let g:netrw_dirhist_2='/Applications/XAMPP/etc'
-let g:netrw_dirhist_3='/Users/stefan/.dotfiles/.termtile'
-let g:netrw_dirhist_4='/Users/stefan/.dotfiles/.vim/colors'
-let g:netrw_dirhist_5='/Users/stefan/.dotfiles/.vim'
-let g:netrw_dirhist_6='/Users/stefan/.config'
-let g:netrw_dirhist_7='/Users/stefan/.dotfiles/autocomplete'

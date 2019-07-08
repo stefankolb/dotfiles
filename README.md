@@ -4,16 +4,28 @@ These are *my* personal dotfiles. Use at your own risk!
 
 Just started working on this, so don't expect anything...
 
+
+# Installation
+
+To install/setup these dotfiles, you can runuse the [install script][1] via cURL:
+
+```sh
+curl -o- https://raw.githubusercontent.com/stefankolb/dotfiles/master/install.sh | bash
+```
+
+**NOTE**: Currently, this will override any existing dotfiles, so be careful!
+
+
 # Noteworthy
 
 ## `.eslintrc`
 
-I've been using [JSHint][1] for quite some time, but recently
-switched to [ESLint][2]. The ESLint runtime configuration in
-[`.eslintrc-all`][4] holds
-all available rules for the version mentioned below. All checks are deactived by default and can be activated on a per project base. I use [`.eslintrc`][5] during development and [`.eslintrc-commit`][5] is used in Git pre-commit.
+I've been using [JSHint][100] for quite some time, but recently
+switched to [ESLint][101]. The ESLint runtime configuration in
+[`.eslintrc-all`][103] holds
+all available rules for the version mentioned below. All checks are deactived by default and can be activated on a per project base. I use [`.eslintrc`][104] during development and [`.eslintrc-commit`][105] is used in Git pre-commit.
 
-* ESLint: v6.0.1 ([list of rules][3])
+* ESLint: v6.0.1 ([list of rules][102])
 * Last checked: 2019-07-03
 
 
@@ -22,9 +34,10 @@ all available rules for the version mentioned below. All checks are deactived by
 I learned a lot from - and was inspired by - the dotfiles of other people, in
 particular (in alphabetical order):
 
-* [Matthias Bynens' dotfiles][8]
-* [Nick S. Plekhanov's dotfiles][9]
-* [Paul Irish's dotfiles][7]
+* [Matthias Bynens' dotfiles][107]
+* [Mina Markham's formation][109]
+* [Nick S. Plekhanov's dotfiles][108]
+* [Paul Irish's dotfiles][106]
 
 
 # ToDos
@@ -37,12 +50,14 @@ particular (in alphabetical order):
 
 [//]: # "References"
 
-[1]: http://jshint.com
-[2]: http://eslint.org
-[3]: http://eslint.org/docs/rules/
-[4]: https://github.com/stefankolb/dotfiles/blob/master/coding/.eslintrc-all
-[5]: https://github.com/stefankolb/dotfiles/blob/master/coding/.eslintrc
-[6]: https://github.com/stefankolb/dotfiles/blob/master/coding/.eslintrc-commit
-[7]: https://github.com/paulirish/dotfiles
-[8]: https://github.com/mathiasbynens/dotfiles
-[9]: https://github.com/nicksp/dotfiles
+[1]: https://github.com/stefankolb/dotfiles/blob/master/install.sh
+[100]: http://jshint.com
+[101]: http://eslint.org
+[102]: http://eslint.org/docs/rules/
+[103]: https://github.com/stefankolb/dotfiles/blob/master/coding/.eslintrc-all
+[104]: https://github.com/stefankolb/dotfiles/blob/master/coding/.eslintrc
+[105]: https://github.com/stefankolb/dotfiles/blob/master/coding/.eslintrc-commit
+[106]: https://github.com/paulirish/dotfiles
+[107]: https://github.com/mathiasbynens/dotfiles
+[108]: https://github.com/nicksp/dotfiles
+[109]: https://github.com/minamarkham/formation

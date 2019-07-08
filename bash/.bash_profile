@@ -3,7 +3,7 @@ DOTFILES_BASE="${HOME}/.dotfiles"
 
 # Load other parts
 for FILE in aliases exports functions bash_prompt; do
-  FILE="${DOTFILES_BASE}/.${FILE}"
+  FILE="${DOTFILES_BASE}/bash/.${FILE}"
   [ -e "${FILE}" ] && source "${FILE}"
 done
 unset FILE
@@ -17,7 +17,7 @@ export NVM_DIR=${DOTFILES_BASE}/.nvm
 # ------------------------------------------------------------------------------
 
 # Where to store history and specify entry format
-HISTFILE="${DOTFILES_BASE}/.bash_history"
+HISTFILE="${DOTFILES_BASE}/bash/.bash_history"
 HISTTIMEFORMAT="%y-%m-%d %T "
 
 # Don't duplicate lines or lines starting with space in the history.

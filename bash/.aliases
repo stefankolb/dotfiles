@@ -9,6 +9,7 @@ alias ll='ls -la'
 alias ldir='ls -l | grep "^d"'
 
 # Improvements to default commands
+alias less='less -X'
 alias mv='mv -v'
 alias rm='rm -i -v'
 alias cp='cp -v'
@@ -18,11 +19,10 @@ alias localip='ipconfig getifaddr en0'
 alias serve='open http://localhost:8080/ && python -m SimpleHTTPServer 8080'
 
 # Improved/Smarter tools
-alias cat='pygmentize -O style=monokai -f console256 -g'
+alias cat='bat --theme="Monokai Extended"'
+alias git=/usr/local/bin/git
 alias ping='prettyping --nolegend'
 alias top='htop'
 
 # Misc.
-alias git=/usr/local/bin/git
 alias sortbysize='ls -s | sort -n'
-

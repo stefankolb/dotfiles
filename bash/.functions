@@ -14,12 +14,14 @@ function git_is_git_dir {
   fi
 }
 
+
 # Get current Git branch
 function git_get_branch {
   if git_is_git_dir; then
     git symbolic-ref --short HEAD 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
   fi
 }
+
 
 # Check if the current branch has some sort of modification
 # Heavily inspired by https://github.com/riobard/bash-powerline/blob/master/bash-powerline.sh
@@ -54,12 +56,14 @@ function git_get_branch_with_modifications {
    echo "${BRANCH//[\[\]\ ]/}$marks" | sed 's/\(.*\)/\ \[\1\]/'
 }
 
+
 # Get the current Git hash
 function git_get_hash {
   if git_is_git_dir; then
     git rev-parse --short HEAD 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
   fi
 }
+
 
 # Get the latest Git tag in the curent branch
 function git_get_tag {
@@ -78,10 +82,12 @@ function npm_pv {
   npm info $1 | awk '/latest/ {print $2}'
 }
 
+
 # Go to the homepage of an NPM package
 function npm_ph {
   open -a "Safari" $(npm info $1 homepage)
 }
+
 
 # Go to the NPM site of an NPM package
 function npm_nh {
@@ -97,6 +103,7 @@ function npm_nh {
 function md {
   mkdir -p "$@" && cd "$@"
 }
+
 
 # List directory contents after cd-ing into it
 # Needs ll alias (see .aliases)

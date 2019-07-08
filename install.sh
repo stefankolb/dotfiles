@@ -1,40 +1,44 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 # Clear console
 clear
 
+printf "
+        __      __  _____ __
+   ____/ /___  / /_/ __(_) /__  _____
+  / __  / __ \/ __/ /_/ / / _ \/ ___/
+ / /_/ / /_/ / /_/ __/ / /  __(__  )
+ \__,_/\____/\__/_/ /_/_/\___/____/
+
+(c) Copyright 2019-present Stefan Kolb
+\n"
+
 # Configuration
-NVM_VERSION="0.33.11"
-NODE_VERSION="11.6.0"
-DIR_DOTFILES=".dotfiles";
-DIR_TEMP="/tmp/dotfiles"  # We don't want this hidden
-DIR_BASE="${HOME}/${DIR_DOTFILES}"
+VERSION="installation" # @TODO: Ask which version/branch to install
+DIR_TMP="/tmp"
+DIR_TMP_INSTALL="${DIR_TMP}/dotfiles"
+DIR_TMP_ZIP="${DIR_TMP_INSTALL}/dotfiles-${VERSION}"
+FILE_INSTALL_ZIP="${DIR_TMP_INSTALL}/dotfiles-${VERSION}.zip"
 
-# Helper function to print section headlines
-function print_headline {
-  printf "\n\n\n ##### {1} #####\n\n"
-}
+# If curl is not available, we cannot do anything (for now)
+if [ -x curl ]; then
+  printf "You need curl"
+  exit 1
+fi
 
-# Logo and intro
-echo "        __      __  _____ __           "
-echo "   ____/ /___  / /_/ __(_) /__  _____  "
-echo "  / __  / __ \/ __/ /_/ / / _ \/ ___/  "
-echo " / /_/ / /_/ / /_/ __/ / /  __(__  )   "
-echo " \__,_/\____/\__/_/ /_/_/\___/____/    "
+# Make sure we have a temporary install directory
+if [ ! -d ${DIR_TMP_INSTALL} ]; then
+  mkdir -p ${DIR_TMP_INSTALL} || exit 1
+fi
 
-printf "\n SLOGAN MISSING \n\n"
+# Get the requested version from Github and unzip
+printf "Downloading ...\n"
+curl https://codeload.github.com/stefankolb/dotfiles/zip/${VERSION} -o ${FILE_INSTALL_ZIP}
+printf "\nUnzipping ...\n"
+unzip -qn ${FILE_INSTALL_ZIP} -d ${DIR_TMP_INSTALL}
 
-# Preparations
-print_headline "PREPARING DOTFILES INSTALLATION"
-[ ! -d "${DIR_TEMP}" ] && mkdir -p ${DIR_TEMP}
-[ ! -d "${DIR_BASE}" ] && mkdir ${DIR_BASE}
-
-print_headline "INSTALLING NVM (Node Version Manager) v${NVM_VERSION}"
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v{NVM_VERSION}/install.sh | NVM_DIR={DIR_BASE}/.nvm bash
-export NVM_DIR="${DIR_BASE}/.nvm"
-[ -s "${NVM_DIR}/nvm.sh" ] && . "${NVM_DIR}/nvm.sh"
-
-print_headline "INSTALLING NODE v${NODE_VERSION}"
-nvm install ${NODE_VERSION}
-nvm alias default ${NODE_VERSION}
-
+# Start installation
+# @TODO Furture versions could have install scripts for various shells
+cd ${DIR_TMP_ZIP}/install
+chmod +x install.bash
+./install.bash

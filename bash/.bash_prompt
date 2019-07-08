@@ -1,6 +1,6 @@
 # BASH prompt
 # 
-# iTerm2 -> Profiles -> Text -> Hack 12pt
+# iTerm2 -> Profiles -> Text -> Fira Code Regular 12pt
 
 # Define colors
 COLOR_RESET="\e[0m";
