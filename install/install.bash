@@ -77,6 +77,7 @@ fi
 print_headline "INSTALLING HOMEBREW"
 if ! exists brew; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew update
   
   print_lb 1
   print_success "Brew successfully installed"
@@ -127,6 +128,20 @@ then
     
     # Source Bash profile to make everything available that we installed
     . ${DIR_BASE}/bash/.bash_profile
+    
+    
+    # ##########################################################################
+    # SETUP APPS
+    # ##########################################################################
+    
+    print_headline 'INSTALLING APPS VIA HOMEBREW/CASK'
+    brew tap caskroom/cask
+    install_file_list 'brew cask install' './_install-file-lists/brew-cask'
+    
+    
+    # ##########################################################################
+    # DONE
+    # ##########################################################################
     
     print_success "Dotfiles successfully installed! :)"
 fi

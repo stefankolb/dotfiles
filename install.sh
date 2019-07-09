@@ -14,7 +14,7 @@ printf "
 \n"
 
 # Configuration
-VERSION="installation" # @TODO: Ask which version/branch to install
+VERSION="master" # @TODO: Ask which version/branch to install
 DIR_TMP="/tmp"
 DIR_TMP_INSTALL="${DIR_TMP}/dotfiles"
 DIR_TMP_ZIP="${DIR_TMP_INSTALL}/dotfiles-${VERSION}"
