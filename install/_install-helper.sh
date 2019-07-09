@@ -5,9 +5,11 @@
 # ##############################################################################
 
 # $1 = file name that holds the file(s) to copy
+# $1 = Set to true to ignore .dotfiles base dir
 function copy_file_list {
   local file_list=$1
-
+  local ignoreDotfilesBase=$2
+  
   # Check if the list file exists
   if [ ! -f $file_list ]; then
     print_error "File '$file_list' does not exist"
@@ -21,13 +23,18 @@ function copy_file_list {
     local target=${file#*=}
     local realsource=$(eval echo -e "${source}")
     local realtarget=$(eval echo -e "${target}")
-
-    print_in_white "Copying $realsource to ${DIR_BASE}/$realtarget ... "
+    
+    # Determine base directory
+    if [ ! ${ignoreDotfilesBase} == true ]; then
+      realtarget="${DIR_BASE}/${realtarget}"
+    fi
+    
+    print_in_white "Copying ${realsource} to ${realtarget} ... "
     
     # Make sure the destination directory exists
     local dirname=$(dirname "${realtarget}")
-    mkdir -p ${DIR_BASE}/$dirname
-    cp -R $realsource ${DIR_BASE}/$realtarget 2>/dev/null || \
+    mkdir -p ${dirname}
+    cp -R $realsource $realtarget 2>/dev/null || \
       ( \
         print_error_short && \
         print_lb 1

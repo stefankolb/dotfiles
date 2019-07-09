@@ -138,6 +138,9 @@ then
     brew tap caskroom/cask
     install_file_list 'brew cask install' './_install-file-lists/brew-cask'
     
+    print_headline 'COPYING APP CONFIGS AND PREFERENCE FILES'
+    copy_file_list './_install-file-lists/files.apps' true
+    
     
     # ##########################################################################
     # DONE
