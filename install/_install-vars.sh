@@ -53,9 +53,10 @@ DIR_DOTFILES=".dotfiles";
 DIR_TEMP="/tmp/dotfiles"
 DIR_BASE="${HOME}/${DIR_DOTFILES}"
 DIR_NVM="${DIR_BASE}/.nvm"
+DIR_NPM="${DIR_BASE}/.npm"
 DIR_GIT="${DIR_BASE}/git"
 
-REQUIRED_DIRS=($DIR_TEMP $DIR_BASE $DIR_NVM $DIR_GIT)
+REQUIRED_DIRS=($DIR_TEMP $DIR_BASE $DIR_NVM $DIR_NPM $DIR_GIT)
 
 
 # #############################################################################
