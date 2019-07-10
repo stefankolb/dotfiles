@@ -68,7 +68,7 @@ function git_get_hash {
 # Get the latest Git tag in the curent branch
 function git_get_tag {
   if git_is_git_dir; then
-    git describe --tags --abbrev=0 --first-parent 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
+    git describe --tags --abbrev=0 2> /dev/null | sed 's/\(.*\)/\ \[\1\]/'
   fi
 }
 
