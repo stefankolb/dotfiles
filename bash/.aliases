@@ -22,7 +22,7 @@ alias serve='open http://localhost:8080/ && python -m SimpleHTTPServer 8080'
 alias cat='bat --theme="Monokai Extended"'
 alias git=/usr/local/bin/git
 alias ping='prettyping --nolegend'
-alias top='htop'
+alias top='gtop'
 
 # Misc.
 alias sortbysize='ls -s | sort -n'
