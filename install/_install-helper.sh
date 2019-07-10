@@ -8,7 +8,7 @@
 # $1 = Set to true to ignore .dotfiles base dir
 function copy_file_list {
   local file_list=$1
-  local ignoreDotfilesBase=$2
+  local ignoreDotfilesBase=${2:false}
   
   # Check if the list file exists
   if [ ! -f $file_list ]; then
@@ -25,7 +25,7 @@ function copy_file_list {
     local realtarget=$(eval echo -e "${target}")
     
     # Determine base directory
-    if [ ! ${ignoreDotfilesBase} == true ]; then
+    if [ -z ${ignoreDotfilesBase} ]; then
       realtarget="${DIR_BASE}/${realtarget}"
     fi
     

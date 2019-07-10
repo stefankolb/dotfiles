@@ -106,7 +106,7 @@ then
     setup_symlinks './_install-file-lists/symlinks.npm'
     
     print_headline 'INSTALLING GLOBAL NPM PACKAGES'
-    install_file_list 'npm install -g' './_install-file-lists/npm'
+    install_file_list 'npm install -g' './_install-file-lists/.npm'
 
     print_headline 'COPYING BASH FILES'
     copy_file_list './_install-file-lists/files.bash'
