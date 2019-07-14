@@ -2,3 +2,4 @@
 ./../apps/typora/abnerworks.Typora.plist=${HOME}/Library/Preferences/abnerworks.Typora.plist
 ./../apps/typora/vue*=${HOME}/Libraray/Application\ Support/abnerworks.Typora/themes/
 ./../apps/typora/ursine*=${HOME}/Libraray/Application\ Support/abnerworks.Typora/themes/
+./../apps/vscode/settings.json=${HOME}/Libraray/Application\ Support/Code/User/settings.json
