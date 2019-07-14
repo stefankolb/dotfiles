@@ -1,5 +1,12 @@
+# /install
+
+* Improve print_success, print_warning etc. by automatically add a linebreak before the output (and remove all calls to print_lb 1 in front of these method calls)
+* Error handling for shell commands
+
+
 # /bash
 
+* Improve "security" by putting variables into quotes 
 * Functions to execute on the command to add ESLint rules to a folder
 * Functions to execute on the command to add SassLint rules to a folder
 * Functions to execute on the command to add Editorconfig to a folder

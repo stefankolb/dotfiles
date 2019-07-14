@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
+#
+#         __      __  _____ __
+#    ____/ /___  / /_/ __(_) /__  _____
+#   / __  / __ \/ __/ /_/ / / _ \/ ___/
+#  / /_/ / /_/ / /_/ __/ / /  __(__  )
+#  \__,_/\____/\__/_/ /_/_/\___/____/
+# 
+# (c) Copyright 2019-present Stefan Kolb
+#
 
 # #############################################################################
 # COLOR DEFINITIONS
@@ -50,13 +59,13 @@ TEXT_RESET="\e[0m"
 # #############################################################################
 
 DIR_DOTFILES=".dotfiles";
-DIR_TEMP="/tmp/dotfiles"
 DIR_BASE="${HOME}/${DIR_DOTFILES}"
+
 DIR_NVM="${DIR_BASE}/.nvm"
 DIR_NPM="${DIR_BASE}/.npm"
 DIR_GIT="${DIR_BASE}/git"
 
-REQUIRED_DIRS=($DIR_TEMP $DIR_BASE $DIR_NVM $DIR_NPM $DIR_GIT)
+REQUIRED_DIRS=($DIR_BASE $DIR_NVM $DIR_NPM $DIR_GIT)
 
 
 # #############################################################################
