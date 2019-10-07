@@ -15,3 +15,7 @@ export MANPAGER="less -X"
 # Enable color scheme
 export CLICOLOR=1
 export LSCOLORS=CxfxcxdxBxegedabagacad
+
+# Export history file so it can be used by hstr; see .bash_profile
+export HISTFILE=${HISTFILE}
+export HSTR_CONFIG=hicolor,prompt-bottom

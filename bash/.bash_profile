@@ -55,6 +55,9 @@ shopt -s histappend;
 # MISC.
 # ------------------------------------------------------------------------------
 
+# Keybindings
+bind '"\C-h": "\C-ahstr -- \C-j"'   # Control-h to open hstr
+
 #
 shopt -s nocaseglob;
 shopt -s cdspell;
