@@ -36,6 +36,7 @@
   "npm.autoDetect": "off",
   "php.suggest.basic": false,
   "php.validate.enable": false,
+  "scm.defaultViewMode": "tree",
   "scss.validate": false,
   "search.collapseResults": "alwaysCollapse",
   "search.showLineNumbers": true,
