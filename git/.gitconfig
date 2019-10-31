@@ -3,7 +3,7 @@
   cm = commit -m
   cms = "!f() { git commit --allow-empty -m \"[status] ${1}\"; }; f"
   co = checkout
-  df = "!git diff --color $@ | ~/.dotfiles/git/diff-so-fancy"
+  df = "!git diff --color $@ | diff-so-fancy"
   db = branch -d
   drb = "!f() { : git branch ; B=$1; R=${B/origin\\//}; git push origin :${R} && git remote prune origin; }; f"
   ps = push
