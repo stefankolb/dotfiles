@@ -1,5 +1,6 @@
 {
   "css.validate": false,
+  "editor.autoIndent": "advanced",
   "editor.cursorBlinking": "phase",
   "editor.cursorStyle": "underline",
   "editor.detectIndentation": false,
@@ -16,6 +17,7 @@
   "editor.snippetSuggestions": "top",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
+  "explorer.compactFolders": false,
   "explorer.autoReveal": false,
   "explorer.openEditors.visible": 0,
   "extensions.autoCheckUpdates": false,
