@@ -4,7 +4,7 @@
   "editor.cursorBlinking": "phase",
   "editor.cursorStyle": "underline",
   "editor.detectIndentation": false,
-  "editor.fontFamily": "Fira Code, Hack, monospace",
+  "editor.fontFamily": "Jetbrains Mono, Fira Code, Hack, monospace",
   "editor.fontLigatures": true,
   "editor.minimap.renderCharacters": false,
   "editor.renderLineHighlight": "all",
