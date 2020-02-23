@@ -2,6 +2,7 @@
 ./../bash/.bash_profile=bash/.bash_profile
 ./../bash/.bash_prompt=bash/.bash_prompt
 ./../bash/.bash_sessions_disable=bash/.bash_sessions_disable
+./../bash/.hushlogin=bash/.hushlogin
 ./../bash/.exports=bash/.exports
 ./../bash/.functions=bash/.functions
 ./../bash/.inputrc=bash/.inputrc
