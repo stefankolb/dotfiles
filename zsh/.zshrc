@@ -1,4 +1,4 @@
-# Set keyboard bindings to Emacs style
+# Set keyboard bindings to Vim style
 bindkey -e
 
 # Set .dotfiles base directory
@@ -63,8 +63,11 @@ autoload -Uz compinit && compinit -i -d ${DOTFILES_BASE}/zsh/.zcompdump
 
 # Use the text that has already been typed as the prefix for searching through
 # commands (i.e. more intelligent up/down behavior)
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
 
 # Custom keybindings
 bindkey -s "^h" "hstr -- ^M"   # Ctrl-h to open hstr
