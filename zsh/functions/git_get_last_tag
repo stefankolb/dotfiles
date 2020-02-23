@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+function git_get_last_tag() {
+  if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+    echo "$(git describe --tags --abbrev=0 2> /dev/null)"
+  fi
+}
+
+git_get_last_tag

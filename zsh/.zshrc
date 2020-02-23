@@ -11,10 +11,12 @@ for FILE in aliases exports; do
 done
 unset FILE
 
+# Make custom functions available
+fpath+=${DOTFILES_BASE}/zsh/functions
+
 # Make Node usable by importing Node Version Manager (NVM)
 export NVM_DIR=${DOTFILES_BASE}/.nvm
 [ -s "${NVM_DIR}/nvm.sh" ] && . ${NVM_DIR}/nvm.sh
-
 
 # ------------------------------------------------------------------------------
 # HISTORY CONTROL
@@ -89,9 +91,11 @@ test -e "${DOTFILES_BASE}/zsh/.iterm2_shell_integration.zsh" && source "${DOTFIL
 # PROMPT/THEME
 # ------------------------------------------------------------------------------
 
+autoload git_get_last_tag
+
 function prompt_vcs_additional_info() {
   p10k segment -b 208 -f 0 -t "${VCS_STATUS_COMMIT[0,8]}"
-  p10k segment -b 9 -f 0 -t "${VCS_STATUS_TAG}"
+  p10k segment -b 9 -f 0 -t "$(git_get_last_tag)"
 }
 
 source ${DOTFILES_BASE}/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
