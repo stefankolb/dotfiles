@@ -5,7 +5,7 @@ bindkey -e
 DOTFILES_BASE="${HOME}/.dotfiles"
 
 # Load other parts
-for FILE in aliases exports; do
+for FILE in aliases exports functions; do
   FILE="${DOTFILES_BASE}/zsh/.${FILE}"
   [ -e "${FILE}" ] && source "${FILE}"
 done

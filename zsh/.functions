@@ -1,0 +1,31 @@
+# Various functionality added to the shell which can be used by other scripts
+# or as standalone at the command line
+
+# ------------------------------------------------------------------------------
+# CONFIGURATION
+# ------------------------------------------------------------------------------
+
+local DEFAULT_BROWSER="Firefox"
+
+
+# ------------------------------------------------------------------------------
+# NODE/NPM
+# ------------------------------------------------------------------------------
+
+# Get latest version of package $1
+# NPM latest version
+npmlv () {
+  npm info $1 | awk '/latest/ {print $2}'
+}
+
+# Open NPM.js documentation for package $1
+# NPM open npm.js
+npmon () {
+  open -a "${DEFAULT_BROWSER}" https://www.npmjs.com/package/$1
+}
+
+# Open homepage of package $1
+# NPM open homepage
+npmoh () {
+  open -a "${DEFAULT_BROWSER}" $(npm info $1 homepage)
+}
