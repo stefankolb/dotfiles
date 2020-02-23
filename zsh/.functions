@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Various functionality added to the shell which can be used by other scripts
 # or as standalone at the command line
 

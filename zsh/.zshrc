@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Set keyboard bindings to Vim style
 bindkey -e
 
