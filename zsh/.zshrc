@@ -103,27 +103,15 @@ function prompt_vcs_additional_info() {
 source ${DOTFILES_BASE}/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ${DOTFILES_BASE}/zsh/themes/.p10k.zsh ]] || source ${DOTFILES_BASE}/zsh/themes/.p10k.zsh
 
-function prompt_package_info() {
-  # Only add prompt segment if there is a package.json in the current directory
-  _p9k_upglob 'package.json' && return
-
-  local project_name
-  project_name=( $(grep "\"name\":" package.json | cut -d \" -f4) )
-
-  local project_version
-  project_version=( $(grep "\"version\":" package.json | cut -d \" -f4) )
-
-  p10k segment -b 6 -f 15 -t "${project_name}@v${project_version}"
-}
-
 # Overwrite Powerlevel10k options here
 typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT=30
+typeset -g POWERLEVEL9K_PACKAGE_CONTENT_EXPANSION='${P9K_PACKAGE_NAME//\%/%%}@${P9K_PACKAGE_VERSION//\%/%%}'
 typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   newline
   dir
 )
 typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-  package_info
+  package
   newline
   vcs
   vcs_additional_info
