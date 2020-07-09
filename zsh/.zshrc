@@ -106,8 +106,11 @@ source ${DOTFILES_BASE}/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 # Overwrite Powerlevel10k options here
 typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT=30
 typeset -g POWERLEVEL9K_PACKAGE_CONTENT_EXPANSION='${P9K_PACKAGE_NAME//\%/%%}@${P9K_PACKAGE_VERSION//\%/%%}'
+typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=15
+typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=15
 typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   newline
+  status
   dir
 )
 typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
