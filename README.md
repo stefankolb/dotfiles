@@ -25,8 +25,8 @@ switched to [ESLint][101]. The ESLint runtime configuration in
 [`.eslintrc-all`][103] holds
 all available rules for the version mentioned below. All checks are deactived by default and can be activated on a per project base. I use [`.eslintrc`][104] during development and [`.eslintrc-commit`][105] is used in Git pre-commit.
 
-* ESLint: v6.0.1 ([list of rules][102])
-* Last checked: 2019-07-03
+* ESLint: v7.7.0 ([list of rules][102])
+* Last checked: 2020-08-22
 
 
 # Credits
@@ -45,8 +45,8 @@ particular (in alphabetical order):
 * Write README.md
   * Add credits
 * Write install script
-* Write update script  
- 
+* Write update script
+
 
 [//]: # "References"
 
