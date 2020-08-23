@@ -4,19 +4,12 @@ files:
   include: '**/*.s+(a|c)ss'
 rules:
   attribute-quotes:
-    - 1
-    -
-      include: true
+    - 2
   bem-depth: 0
   border-zero:
-    - 1
-    -
-      convention: 'none'
+    - 2
   brace-style:
-    - 1
-    -
-      style: '1tbs'
-      allow-single-line: true
+    - 2
   class-name-format:
     - 2
     -
@@ -24,37 +17,37 @@ rules:
   clean-import-paths: 2
   declarations-before-nesting: 2
   empty-args:
-    - 1
+    - 2
     -
       include: true
   empty-line-between-blocks: 0
   extends-before-declarations: 2
   extends-before-mixins: 2
-  final-newline: 1
+  final-newline: 2
   force-attribute-nesting: 0
-  force-element-nesting: 1
-  force-pseudo-nesting: 1
+  force-element-nesting: 2
+  force-pseudo-nesting: 2
   function-name-format:
     - 2
     -
       allow-leading-underscore: false
   hex-length: 0
-  hex-notation: 1
+  hex-notation: 2
   id-name-format:
     - 2
     -
       allow-leading-underscore: false
-  indentation: 1
-  leading-zero: 1
+  indentation: 2
+  leading-zero: 2
   max-file-line-count: 0
-  max-line-length: 0
+  max-line-length: 2
   mixin-name-format:
     - 2
     -
       allow-leading-underscore: false
   mixins-before-declarations: 2
   nesting-depth:
-    - 1
+    - 2
     -
       max-depth: 5
   no-attribute-selectors: 0
@@ -74,13 +67,13 @@ rules:
   no-mergeable-selectors: 0
   no-misspelled-properties: 2
   no-qualifying-elements: 0
-  no-trailing-whitespace: 0
+  no-trailing-whitespace: 2
   no-trailing-zero: 2
   no-transition-all: 0
   no-universal-selectors: 0
   no-url-domains: 0
   no-url-protocols: 0
-  no-value-vendor-prefix: 0
+  no-vendor-prefix: 0
   no-warn: 2
   one-declaration-per-line: 0
   placeholder-in-extend: 0
@@ -89,20 +82,20 @@ rules:
     -
       allow-leading-underscore: false
   property-sort-order: 0
-  property-units: 1
-  pseudo-element: 1
-  quotes: 0
+  property-units: 2
+  pseudo-element: 2
+  quotes: 2
   shorthand-values: 0
   single-line-per-selector: 2
   space-after-bang: 2
-  space-after-colon: 1
-  space-after-comma: 1
-  space-around-operator: 1
+  space-after-colon: 2
+  space-after-comma: 2
+  space-around-operator: 2
   space-before-bang: 2
-  space-before-brace: 1
-  space-before-colon: 1
-  space-between-parens: 1
-  trailing-semicolon: 1
+  space-before-brace: 2
+  space-before-colon: 2
+  space-between-parens: 2
+  trailing-semicolon: 2
   url-quotes: 0
   variable-for-property: 0
   variable-name-format:
