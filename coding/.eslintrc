@@ -208,6 +208,7 @@
     "no-multiple-empty-lines": [
       1,
       {
+        "max": 2,
         "maxBOF": 0,
         "maxEOF": 1
       }
