@@ -1,5 +1,15 @@
 #!/usr/bin/env zsh
 
+# Always position the prompt at the bottom of the window
+printf '\n%.0s' {1..100}
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Set keyboard bindings to Vim style
 bindkey -e
 
@@ -19,6 +29,7 @@ fpath+=${DOTFILES_BASE}/zsh/functions
 # Make Node usable by importing Node Version Manager (NVM)
 export NVM_DIR=${DOTFILES_BASE}/.nvm
 [ -s "${NVM_DIR}/nvm.sh" ] && . ${NVM_DIR}/nvm.sh
+
 
 # ------------------------------------------------------------------------------
 # HISTORY CONTROL
@@ -100,6 +111,15 @@ function prompt_vcs_additional_info() {
   p10k segment -b 9 -f 0 -t "$(git_get_last_tag)"
 }
 
+# Insert a new line before transient prompt
+function p10k-on-pre-prompt() {
+  if [[ $P9K_TTY == new ]]; then
+    p10k display 'empty_line'=hide
+  else
+    p10k display 'empty_line'=print
+  fi
+}
+
 source ${DOTFILES_BASE}/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ${DOTFILES_BASE}/zsh/themes/.p10k.zsh ]] || source ${DOTFILES_BASE}/zsh/themes/.p10k.zsh
 
@@ -119,3 +139,4 @@ typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   vcs
   vcs_additional_info
 )
+
