@@ -1,0 +1,3 @@
+${HOME}/.dotfiles/apps/tmux/.tmux.conf=${HOME}/.tmux.conf
+${HOME}/.dotfiles/apps/vim/.vim=${HOME}/.vim
+${HOME}/.dotfiles/apps/vim/.vimrc=${HOME}/.vimrc

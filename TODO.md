@@ -24,9 +24,3 @@
 
 * Install iTerm 2 via homebrew and setup profile
 * Install Fira Code font
-
-
-# /apps
-
-* Stop treating vim seperate, it's an app
-* Add tmux to installation

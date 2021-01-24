@@ -25,7 +25,7 @@ set foldmethod=indent   " use indentions as fold method
 
 au FileType gitcommit set tw=72 " Auto-wrap git commit messages at 72 chars
 
-set viminfo+=n~/.dotfiles/.viminfo   " Tell vim to store .viminfo here
+set viminfo+=n~/.dotfiles/apps/vim/.viminfo   " Tell vim to store .viminfo here
 
 let g:airline_theme='gruvbox'   " Set airline theme
 

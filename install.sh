@@ -16,7 +16,7 @@ printf "
 # CONFIGURATION
 # ##############################################################################
 
-# Only configure what is needed before _install_vars.sh is downloaded from 
+# Only configure what is needed before _install_vars.sh is downloaded from
 # Github and sourced in
 
 VERSION="master" # @TODO: Ask which version/branch to install
@@ -34,8 +34,8 @@ FILE_INSTALL_ZIP="${DIR_TMP_INSTALL}/dotfiles-${VERSION}.zip"
 check_for_install_tools() {
   DEPS=(_install-vars.sh _install-helper.sh)
   local dep
-  
-  for dep in "${DEPS[@]}"; do 
+
+  for dep in "${DEPS[@]}"; do
     if [ -e "install/${dep}" ]; then
       . "install/${dep}"
     else
@@ -139,7 +139,7 @@ print_headline "INSTALLING NODE v${NODE_VERSION}"
 if ! exists node; then
   nvm install ${NODE_VERSION}
   nvm alias default ${NODE_VERSION}
-  
+
   print_lb 1
   print_success "Node v${NODE_VERSION} successfully installed"
 else
@@ -166,7 +166,7 @@ print_headline "INSTALLING HOMEBREW"
 if ! exists brew; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew update
-  
+
   print_lb 1
   print_success "Brew successfully installed"
 else
@@ -182,19 +182,19 @@ print_lb 1
 print_success "Brew packages successfully installed"
 
 
-# VIM
-# ###
+# CLI TOOLS
+# #########
 
-print_headline 'SETTING UP VIM'
-print_in_white 'Copying vim files ...'
+print_headline 'SETTING UP CLI TOOLS'
+print_in_white 'Copying cli tools files ...'
 print_lb 1
-copy_file_list './install/_install-file-lists/files.vim'
+copy_file_list './install/_install-file-lists/files.cli'
 print_lb 1
-print_in_white 'Setting up symlinks for vim ...'
+print_in_white 'Setting up symlinks for cli tools ...'
 print_lb 1
-setup_symlinks './install/_install-file-lists/symlinks.vim'
+setup_symlinks './install/_install-file-lists/symlinks.cli'
 print_lb 1
-print_success "VIM successfully set up"
+print_success "CLI tools successfully set up"
 
 
 # GIT
