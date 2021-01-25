@@ -54,6 +54,7 @@
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.rendererType": "auto",
   "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.shellArgs.osx": [ "-l", "-c", "tmux new -s vscode" ],
   "typescript.validate.enable": false,
   "update.mode": "manual",
   "window.title": "${rootName}${separator}${activeEditorMedium}",
