@@ -46,14 +46,22 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "terminal.external.osxExec": "iTerm2.app",
-  "terminal.integrated.confirmOnExit": true,
+  "terminal.integrated.confirmOnExit": "hasChildProcesses",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-  "terminal.integrated.rendererType": "auto",
-  "terminal.integrated.shell.osx": "/bin/zsh",
-  "terminal.integrated.shellArgs.osx": [ "-l", "-c", "tmux new -A -s vscode" ],
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "args": [
+        "-l",
+        "-c",
+        "tmux new -A -s vscode"
+      ],
+      "icon": "terminal-tmux",
+      "path": "zsh"
+    }
+  },
   "typescript.validate.enable": false,
   "update.mode": "manual",
   "window.title": "${rootName}${separator}${activeEditorMedium}",
