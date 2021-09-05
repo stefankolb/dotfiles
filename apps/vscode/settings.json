@@ -1,6 +1,7 @@
 {
   "css.validate": false,
   "editor.autoIndent": "advanced",
+  "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "phase",
   "editor.cursorStyle": "underline",
   "editor.detectIndentation": false,
