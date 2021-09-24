@@ -2,7 +2,9 @@
 execute pathogen#infect()
 
 syntax on               " enable syntax processing
+
 colorscheme gruvbox     " use gruvbox color scheme
+set background=dark     " use gruvbox dark mode
 
 set tabstop=2           " number of visual spaces per TAB character
 set softtabstop=2       " number of spaces per TAB when editing
