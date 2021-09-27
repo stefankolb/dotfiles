@@ -3,11 +3,14 @@
 # Always position the prompt at the bottom of the window
 printf '\n%.0s' {1..100}
 
+# Cache directory
+CACHE_DIR=${XDG_CACHE_HOME:-$HOME/.cache}
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "${CACHE_DIR}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${CACHE_DIR}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # Set keyboard bindings to Vim style
@@ -68,8 +71,13 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 # Use select menu for ambiguous completion
 zstyle ':completion:*' menu select
 
+# Use caching for autocompletion
+autoload -Uz compinit
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "${CACHE_DIR}/zsh/.zcompcache"
+
 # Initialize the autocompletion
-autoload -Uz compinit && compinit -i -d ${DOTFILES_BASE}/zsh/.zcompdump
+compinit -C -d ${CACHE_DIR}/zsh/.zcompdump
 
 
 # ------------------------------------------------------------------------------
@@ -139,4 +147,3 @@ typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   vcs
   vcs_additional_info
 )
-
