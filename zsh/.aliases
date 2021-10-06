@@ -7,6 +7,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ~='cd ~'
 alias -- -='cd ~-'
+alias cdl='cd -P'
 alias ll='ls -la'
 alias ldir='ls -l | grep "^d"'
 

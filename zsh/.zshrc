@@ -29,6 +29,10 @@ unset FILE
 # Make custom functions available
 fpath+=${DOTFILES_BASE}/zsh/functions
 
+# Make bookmarks available
+setopt auto_cd
+cdpath=(${DOTFILES_BASE}/zsh/bookmarks)
+
 # Make Node usable by importing Node Version Manager (NVM)
 export NVM_DIR=${DOTFILES_BASE}/.nvm
 [ -s "${NVM_DIR}/nvm.sh" ] && . ${NVM_DIR}/nvm.sh
