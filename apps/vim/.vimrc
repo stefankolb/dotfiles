@@ -29,7 +29,7 @@ au FileType gitcommit set tw=72 " Auto-wrap git commit messages at 72 chars
 
 set viminfo+=n~/.dotfiles/apps/vim/.viminfo   " Tell vim to store .viminfo here
 
-let g:airline_theme='gruvbox'   " Set airline theme
+let g:airline_theme='base16_gruvbox_dark_hard'    " Set airline theme
 
 " shortcuts / key mappings
 map <C-n> :NERDTreeToggle<CR>
