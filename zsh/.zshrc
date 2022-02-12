@@ -75,6 +75,9 @@ setopt inc_append_history
 source ${DOTFILES_BASE}/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# Bug: https://github.com/zsh-users/zsh-autosuggestions/issues/619
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-beginning-search-backward-end history-beginning-search-forward-end)
+
 # Enable autocompletions that are not part of the ZSH core
 fpath=(${DOTFILES_BASE}/zsh/plugins/zsh-completions/src $fpath)
 
@@ -90,6 +93,17 @@ zstyle ':completion:*' cache-path "${CACHE_DIR}/zsh/.zcompcache"
 
 # Initialize the autocompletion
 compinit -C -d ${CACHE_DIR}/zsh/.zcompdump
+
+
+# ------------------------------------------------------------------------------
+# FZF
+# ------------------------------------------------------------------------------
+
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+fi
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
 
 # ------------------------------------------------------------------------------

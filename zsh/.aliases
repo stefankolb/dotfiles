@@ -10,6 +10,7 @@ alias -- -='cd ~-'
 alias cdl='cd -P'
 alias ll='ls -la'
 alias ldir='ls -l | grep "^d"'
+alias fzfp='fzf --preview "bat --color=always --theme=gruvbox-dark --line-range=:500 {}"'
 
 # Improvements to default commands
 alias less='less -X'
@@ -22,7 +23,8 @@ alias localip='ipconfig getifaddr en0'
 alias serve='open http://localhost:8080/ && python -m SimpleHTTPServer 8080'
 
 # Improved/Smarter tools
-alias cat='bat --theme="Monokai Extended"'
+alias bat='bat --theme=gruvbox-dark'
+alias cat='bat'
 alias git=/usr/local/bin/git
 alias ping='prettyping --nolegend'
 alias top='gtop'
