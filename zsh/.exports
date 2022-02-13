@@ -35,4 +35,5 @@ export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 # FZF
+export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude ".git"'
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --reverse --height 40% --border --color 'bg:#32302f,bg+:#504945,border:#a89984,disabled:#928374,fg:#a89984,fg+:#d5c4a1,gutter:#32302f,header:#83a598,hl:#cc241d,hl+:#fb4934,info:#d79921,marker:#cc241d,pointer:#fb4934,prompt:#ebddb2,query:#ebdbb2,spinner:#fabd2f'"

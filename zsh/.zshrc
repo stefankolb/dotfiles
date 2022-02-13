@@ -105,6 +105,14 @@ fi
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "${1}"
+}
+
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude "node_modules" --exclude ".git" . "${1}"
+}
+
 
 # ------------------------------------------------------------------------------
 # IMPROVE INPUT/COMMAND LINE
