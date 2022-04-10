@@ -7,6 +7,7 @@
   "editor.detectIndentation": false,
   "editor.fontFamily": "Jetbrains Mono, Fira Code, Hack, monospace",
   "editor.fontLigatures": true,
+  "editor.guides.bracketPairs": "active",
   "editor.minimap.renderCharacters": false,
   "editor.renderLineHighlight": "all",
   "editor.rulers": [
@@ -52,6 +53,7 @@
   "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.macOptionClickForcesSelection": true,
+  "terminal.integrated.minimumContrastRatio": 1,
   "terminal.integrated.profiles.osx": {
     "zsh": {
       "args": [
@@ -63,6 +65,7 @@
       "path": "zsh"
     }
   },
+  "terminal.integrated.tabs.enabled": true,
   "typescript.validate.enable": false,
   "update.mode": "manual",
   "window.title": "${rootName}${separator}${activeEditorMedium}",
