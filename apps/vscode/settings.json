@@ -1,8 +1,10 @@
 {
   "css.validate": false,
+  "editor.accessibilitySupport" : "off",
   "editor.autoIndent": "advanced",
   "editor.bracketPairColorization.enabled": true,
   "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "underline",
   "editor.detectIndentation": false,
   "editor.fontFamily": "Jetbrains Mono, Fira Code, Hack, monospace",
