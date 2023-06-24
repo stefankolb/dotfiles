@@ -11,6 +11,10 @@ fi;
 # Stop tracking me (https://consoledonottrack.com/)
 export DO_NOT_TRACK=1
 
+# Disable sending homebrew data (to Google)
+export HOMEBREW_NO_GOOGLE_ANALYTICS=1
+export HOMEBREW_NO_ANALYTICS=1
+
 # Enable color scheme
 export CLICOLOR=1
 export LSCOLORS=CxfxcxdxBxegedabagacad

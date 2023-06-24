@@ -66,6 +66,9 @@ setopt hist_ignore_space
 # Append immediately to the history file instead of doing it on exiting the shell
 setopt inc_append_history
 
+# Prevent ZSH sessions
+SHELL_SESSIONS_DISABLE=1
+
 
 # ------------------------------------------------------------------------------
 # AUTOCOMPLETE
@@ -171,13 +174,22 @@ typeset -g POWERLEVEL9K_PACKAGE_CONTENT_EXPANSION='${P9K_PACKAGE_NAME//\%/%%}@${
 typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=15
 typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=15
 typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+  vcs
+  vcs_additional_info
+  newline
+  dir
   newline
   status
-  dir
 )
 typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   package
   newline
-  vcs
-  vcs_additional_info
+  newline
 )
+
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=
+typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX=
+typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=
+typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX=
+typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX=
+typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX=

@@ -27,6 +27,7 @@ alias bat='bat --theme=gruvbox-dark'
 alias cat='bat'
 alias git=/usr/local/bin/git
 alias ping='prettyping --nolegend'
+alias python='python3'
 alias top='gtop'
 
 # Misc.
