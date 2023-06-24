@@ -41,3 +41,6 @@
 [submodule "apps/vim/.vim/bundle/markdown-preview.nvim"]
 	path = apps/vim/.vim/bundle/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim.git
+[submodule "apps/vim/.vim/bundle/delimitMate"]
+	path = apps/vim/.vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
