@@ -33,3 +33,6 @@ let g:airline_theme='base16_gruvbox_dark_hard'    " Set airline theme
 
 " shortcuts / key mappings
 map <C-n> :NERDTreeToggle<CR>
+map <C-m><C-p> :MarkdownPreview<CR>
+map <C-m><C-p><C-s> :MarkdownPreviewStop<CR>
+
