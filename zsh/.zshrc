@@ -14,13 +14,6 @@ neofetch
 # Cache directory
 CACHE_DIR=${XDG_CACHE_HOME:-$HOME/.cache}
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${CACHE_DIR}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${CACHE_DIR}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Set keyboard bindings to Vim style
 bindkey -e
 
@@ -66,9 +59,6 @@ setopt hist_ignore_space
 # Append immediately to the history file instead of doing it on exiting the shell
 setopt inc_append_history
 
-# Prevent ZSH sessions
-SHELL_SESSIONS_DISABLE=1
-
 
 # ------------------------------------------------------------------------------
 # AUTOCOMPLETE
@@ -83,6 +73,7 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(history-beginning-search-backward-end history-be
 
 # Enable autocompletions that are not part of the ZSH core
 fpath=(${DOTFILES_BASE}/zsh/plugins/zsh-completions/src $fpath)
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Make tab autocomplete regardless of filename case
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -114,6 +105,17 @@ _fzf_compgen_path() {
 
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude "node_modules" --exclude ".git" . "${1}"
+}
+
+_fzf_complete_git() {
+  ARGS="$@"
+  if [[ $ARGS == 'git co'* ]]; then
+    _fzf_complete "--reverse" "$@" < <(
+      echo "$(git branch)"
+    )
+  else
+    eval "zle ${fzf_default_completion:-expand-or-complete}"
+  fi
 }
 
 

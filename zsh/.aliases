@@ -13,6 +13,7 @@ alias ldir='ls -l | grep "^d"'
 alias fzfp='fzf --preview "bat --color=always --theme=gruvbox-dark --line-range=:500 {}"'
 
 # Improvements to default commands
+alias grep='grep --color'
 alias less='less -X'
 alias mv='mv -v'
 alias rm='rm -i -v'
