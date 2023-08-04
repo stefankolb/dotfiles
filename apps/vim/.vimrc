@@ -26,6 +26,7 @@ set foldnestmax=10      " 10 nested fold max
 set foldmethod=indent   " use indentions as fold method
 
 au FileType gitcommit set tw=72 " Auto-wrap git commit messages at 72 chars
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.mdwn,*.md,*.mdx  set ft=markdown
 
 set viminfo+=n~/.dotfiles/apps/vim/.viminfo   " Tell vim to store .viminfo here
 
@@ -36,3 +37,5 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-m><C-p> :MarkdownPreview<CR>
 map <C-m><C-p><C-s> :MarkdownPreviewStop<CR>
 
+" Custom commands
+command! Sftmd set filetype=markdown
