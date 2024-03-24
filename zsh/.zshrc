@@ -172,9 +172,11 @@ source ${DOTFILES_BASE}/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 # Overwrite Powerlevel10k options here
 typeset -g POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT=30
+typeset -g POWERLEVEL9K_NVM_BACKGROUND=14
 typeset -g POWERLEVEL9K_PACKAGE_CONTENT_EXPANSION='${P9K_PACKAGE_NAME//\%/%%}@${P9K_PACKAGE_VERSION//\%/%%}'
 typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=15
 typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=15
+
 typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   vcs
   vcs_additional_info
@@ -185,6 +187,8 @@ typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 )
 typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   package
+  nvm
+  rust_version
   newline
   newline
 )
