@@ -10,6 +10,7 @@
   "editor.fontFamily": "Jetbrains Mono, Fira Code, Hack, monospace",
   "editor.fontLigatures": true,
   "editor.guides.bracketPairs": "active",
+  "editor.linkedEditing": true,
   "editor.minimap.renderCharacters": false,
   "editor.renderLineHighlight": "all",
   "editor.rulers": [
@@ -73,6 +74,7 @@
   "update.mode": "manual",
   "window.commandCenter": true,
   "window.title": "${rootName}${separator}${activeEditorMedium}",
+  "workbench.activityBar.location": "top",
   "workbench.editor.decorations.badges": true,
   "workbench.editor.decorations.colors": true,
   "workbench.editor.highlightModifiedTabs": true,
@@ -81,6 +83,7 @@
   "workbench.list.openMode": "doubleClick",
   "workbench.settings.enableNaturalLanguageSearch": false,
   "workbench.startupEditor": "none",
+  "workbench.tree.enableStickyScroll": true,
   "workbench.tree.indent": 16,
   "workbench.tree.renderIndentGuides": "always"
 }
