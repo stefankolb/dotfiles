@@ -7,10 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Always position the prompt at the bottom of the window
-printf '\n%.0s' {1..100}
-neofetch
-
 # Cache directory
 CACHE_DIR=${XDG_CACHE_HOME:-$HOME/.cache}
 
@@ -37,6 +33,10 @@ cdpath=(${DOTFILES_BASE}/zsh/bookmarks)
 # Make Node usable by importing Node Version Manager (NVM)
 export NVM_DIR=${DOTFILES_BASE}/.nvm
 [ -s "${NVM_DIR}/nvm.sh" ] && . ${NVM_DIR}/nvm.sh
+
+# Always position the prompt at the bottom of the window
+printf '\n%.0s' {1..100}
+fastfetch -c ${DOTFILES_BASE}/fastfetch.jsonc
 
 
 # ------------------------------------------------------------------------------
