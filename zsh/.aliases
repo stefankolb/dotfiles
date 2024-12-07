@@ -10,14 +10,16 @@ alias -- -='cd ~-'
 alias cdl='cd -P'
 alias ll='ls -la'
 alias ldir='ls -l | grep "^d"'
+
+# Make finding stuff easier
 alias fzfp='fzf --preview "bat --color=always --theme=gruvbox-dark --line-range=:500 {}"'
 
 # Improvements to default commands
+alias cp='cp -v'
 alias grep='grep --color'
 alias less='less -X'
 alias mv='mv -v'
 alias rm='rm -i -v'
-alias cp='cp -v'
 
 # Network related
 alias localip='ipconfig getifaddr en0'
@@ -26,11 +28,31 @@ alias serve='open http://localhost:8080/ && python -m SimpleHTTPServer 8080'
 # Improved/Smarter tools
 alias bat='bat --theme=gruvbox-dark'
 alias cat='bat'
-alias git=/usr/local/bin/git
+alias git=/opt/homebrew/bin/git
 alias ping='prettyping --nolegend'
 alias python='python3'
 alias top='gtop'
 
+# Git
+alias gps='git push'
+alias gpsf='git push --force'
+alias gpu='git pull'
+alias gco='git checkout'
+
+# Homebrew
+alias bcl='brew clean --prune=all'
+alias bout='brew outdated --greedy'
+alias bupd='brew update'
+alias bupg='brew upgrade'
+
+# Podman
+alias pmcl='podman system prune --all --volumnes'
+alias pmsa='podman machine start'
+alias pmso='podman machine stop'
+
 # Misc.
+alias cl="clear"
+alias cn="vi -c 'set filetype=markdown | MarkdownPreview'"
+alias cnv="code --profile 'Hemmingway'"
 alias sortbysize='ls -s | sort -n'
 alias yr='yarn run'
