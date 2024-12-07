@@ -81,12 +81,13 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 zstyle ':completion:*' menu select
 
 # Use caching for autocompletion
+[ -d "$CACHE_DIR/zsh" ] || mkdir -p "$CACHE_DIR/zsh"
 autoload -Uz compinit
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "${CACHE_DIR}/zsh/.zcompcache"
 
 # Initialize the autocompletion
-compinit -C -d ${CACHE_DIR}/zsh/.zcompdump
+compinit -C -d "${CACHE_DIR}/zsh/.zcompdump-${HOST}"
 
 
 # ------------------------------------------------------------------------------
