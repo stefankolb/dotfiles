@@ -1,9 +1,12 @@
 [alias]
+  b = branch
+  ba = branch -a
   cb = checkout -b
   cm = commit -m
   cms = "!f() { git commit --allow-empty -m \"[status] ${1}\"; }; f"
   co = checkout
   df = "!git diff --color $@ | diff-so-fancy"
+  dfd = "!git difftool -y -t difftastic"
   db = branch -d
   drb = "!f() { : git branch ; B=$1; R=${B/origin\\//}; git push origin :${R} && git remote prune origin; }; f"
   ps = push
@@ -21,6 +24,8 @@
   helper = osxkeychain
 [diff]
   tool = vimdiff
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
 [help]
   autocorrect = 20
 [mergetool]
