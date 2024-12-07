@@ -11,9 +11,6 @@ alias cdl='cd -P'
 alias ll='ls -la'
 alias ldir='ls -l | grep "^d"'
 
-# Make finding stuff easier
-alias fzfp='fzf --preview "bat --color=always --theme=gruvbox-dark --line-range=:500 {}"'
-
 # Improvements to default commands
 alias cp='cp -v'
 alias grep='grep --color'
